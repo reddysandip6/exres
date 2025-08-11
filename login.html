@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="icon" href="/public/favicon.svg"/>
+<title>Login – EXRES</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 12h9" stroke="#0B1E3A" stroke-width="2" stroke-linecap="round"/>
+        <path d="M11 6l7 6-7 6" stroke="#D0342C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>EXRES</span>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <div class="card" style="max-width:520px;margin:40px auto">
+    <h2 class="section-title">Login to EXRES</h2>
+    <label class="label" for="email">Email</label>
+    <input id="email" class="input" type="email" placeholder="you@company.com"/>
+    <div style="height:12px"></div>
+    <button class="btn" onclick="window.location='dashboard.html'">Continue</button>
+    <div style="height:12px"></div>
+    <p class="small">MVP demo – email-only mock. Redirects to dashboard.</p>
+  </div>
+</div>
+</body>
+</html>
