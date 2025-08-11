@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="icon" href="/public/favicon.svg"/>
+<title>Dashboard – EXRES</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 12h9" stroke="#0B1E3A" stroke-width="2" stroke-linecap="round"/>
+        <path d="M11 6l7 6-7 6" stroke="#D0342C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>EXRES</span>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container" style="padding-top:16px">
+  <div class="grid" style="grid-template-columns:2fr 1fr">
+    <div class="card">
+      <h2 class="section-title">Alternative Markets</h2>
+      <p class="small">Enter your product and current export country to see safer alternate markets immediately.</p>
+      <div class="row">
+        <div>
+          <label class="label">Product / HS Code</label>
+          <input id="hs" class="input" placeholder="e.g., 6109 (T-shirts), 3004 (Medicaments)"/>
+        </div>
+        <div>
+          <label class="label">Current Export Country</label>
+          <select id="fromCountry" class="input">
+            <option value="">Select country</option>
+            <option>United States</option>
+            <option>European Union</option>
+            <option>United Arab Emirates</option>
+            <option>United Kingdom</option>
+            <option>China</option>
+            <option>Bangladesh</option>
+            <option>Vietnam</option>
+            <option>Saudi Arabia</option>
+          </select>
+        </div>
+      </div>
+      <div style="height:12px"></div>
+      <button class="btn" onclick="suggestAlternates()">Show Alternate Markets</button>
+      <div style="height:16px"></div>
+      <div id="altResults" class="grid" style="grid-template-columns:repeat(3,1fr)"></div>
+    </div>
+
+    <div class="card">
+      <h3 class="section-title">Country Status</h3>
+      <div class="grid">
+        <div class="status ok">Open: UAE, Singapore, Mexico</div>
+        <div class="status warn">At-Risk: USA (sector-specific), EU (quota risk)</div>
+        <div class="status bad">Blocked: (none for your HS)</div>
+      </div>
+      <div style="height:12px"></div>
+      <div class="alert"><strong>Heads-up:</strong> Apparel HS 61/62 facing higher duties in US retailers; consider Vietnam, Mexico, or UAE for near-term diversification.</div>
+    </div>
+  </div>
+
+  <div style="height:16px"></div>
+  <div class="card">
+    <h2 class="section-title">Marketplace – Sample Listings</h2>
+    <table class="table">
+      <thead><tr><th>Exporter</th><th>Product</th><th>Origin</th><th>Target Markets</th><th>Lead Time</th><th></th></tr></thead>
+      <tbody id="marketRows"></tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="footer">© 2025 EXRES – Export Resilience Protocol</footer>
+<script src="script.js"></script>
+</body>
+</html>
